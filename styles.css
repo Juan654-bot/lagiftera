@@ -107,4 +107,34 @@ body{
   .grid{grid-template-columns:1fr}
   .benefits__grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
+
 }
+
+/* ==== FIX OVERFLOW EN MOBILE ==== */
+
+/* Mata cualquier desborde horizontal */
+html, body { overflow-x: hidden; }
+
+/* Las imágenes nunca exceden el ancho del contenedor */
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* Menú mobile ocupa exactamente el ancho de la pantalla */
+@media (max-width: 720px){
+  .nav{
+    position: absolute;
+    left: 0; right: 0;        /* evita sumar px extra y desbordar */
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* El grid del footer a 1 columna en pantallas chicas */
+@media (max-width: 720px){
+  .footer__grid{ grid-template-columns: 1fr; }
+}
+
+/* Previene que textos/links larguísimos empujen el layout */
+footer, .nav, .card__body, .section { word-break: break-word; }
+
+/* Por si algún elemento quedó “grande” accidentalmente */
+.section, .footer, .benefits, .topbar, .hero { overflow-x: hidden; }
