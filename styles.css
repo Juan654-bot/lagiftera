@@ -122,7 +122,7 @@ img, video { max-width: 100%; height: auto; display: block; }
 @media (max-width: 720px){
   .nav{
     position: absolute;
-    left: 0; right: 0;        /* evita sumar px extra y desbordar */
+    left: 0; right: 0;
     width: 100%;
     overflow-x: hidden;
   }
@@ -133,8 +133,20 @@ img, video { max-width: 100%; height: auto; display: block; }
   .footer__grid{ grid-template-columns: 1fr; }
 }
 
-/* Previene que textos/links larguísimos empujen el layout */
+
 footer, .nav, .card__body, .section { word-break: break-word; }
 
-/* Por si algún elemento quedó “grande” accidentalmente */
+
 .section, .footer, .benefits, .topbar, .hero { overflow-x: hidden; }
+
+/* Mantiene cover (sin letterboxing) pero usa recorte pensado para mobile */
+@media (max-width: 720px){
+  .hero{
+    background-image:
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45)),
+      url('img/hero-mobile.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 65vh;
+  }
+}
