@@ -147,7 +147,8 @@ footer, .nav, .card__body, .section { word-break: break-word; }
       url('img/hero-mobile.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 65vh;
+    min-height: 50vh;
   }
 }
+
 
